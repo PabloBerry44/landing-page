@@ -43,6 +43,7 @@ article {
     .textOne, .textTwo {
         opacity: 0;
         position: relative;
+        transition: 1000ms;
     }
     .textTwo .background{
         position: absolute;
