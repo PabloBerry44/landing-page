@@ -9,8 +9,8 @@ const isInViewport = (element) => {
     console.log(element.clientHeight/2)
     console.log(' ')
     return (
-        rect.top >= 0 &&
-        (rect.bottom - (element.clientHeight/2)) <= (window.innerHeight)
+        (rect.top + 100) >= 0 &&
+        (rect.bottom - (element.clientHeight - 200)) <= (window.innerHeight)
     );
 }
 
@@ -18,6 +18,9 @@ const showElements = (elementsArray) => {
     for (const element of elementsArray) {
         if(isInViewport(element)) {
             element.classList.add('visible')
+        }
+        else {
+            element.classList.remove('visible')
         }
     }
 }
