@@ -1,11 +1,16 @@
 const textOne = document.querySelector('.textOne')
 const textTwo = document.querySelector('.textTwo')
+const application = document.querySelector('.application')
 
 const isInViewport = (element) => {
     const rect = element.getBoundingClientRect();
+    console.log('top: ' + rect.top)
+    console.log('bottom: ' + rect.bottom)
+    console.log(element.clientHeight/2)
+    console.log(' ')
     return (
         rect.top >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        (rect.bottom - (element.clientHeight/2)) <= (window.innerHeight)
     );
 }
 
@@ -18,5 +23,5 @@ const showElements = (elementsArray) => {
 }
 
 document.addEventListener('scroll', ()=> {
-    showElements([textOne, textTwo])
+    showElements([textOne, textTwo, application])
 })

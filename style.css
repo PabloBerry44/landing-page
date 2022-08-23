@@ -53,9 +53,6 @@ article {
     .textTwo ul {
         margin-left: 1.2em;
     }
-    .visible {
-        opacity: 1;
-    }
     mark {
         background: rgb(255, 217, 0);
         padding: .3em;
@@ -67,6 +64,7 @@ article {
         display: flex;
         flex-direction: column;
         gap: 3rem;
+        border-radius: 5px;
     }
         .expertSays .title {
             text-align: center;
@@ -82,3 +80,23 @@ article {
             text-align: center;
             font-size: 1.1rem;
         }
+
+    .application {
+        margin-top: 1em;
+        opacity: 0;
+        transition: 1000ms;
+    }
+        .application .title, .application .description {
+            text-align: center;
+        }
+        .smallSection {
+            background: rgba(173, 216, 230, 0.219);
+            border-radius: 5px;
+            margin-top: 1em;
+            padding: 1em;
+        }
+
+
+.visible {
+    opacity: 1;
+}
