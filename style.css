@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
+html * {
+    font-family: 'Merriweather', serif;
+    box-sizing: border-box;
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+.hero {
+    background: lightblue;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2em;
+    gap: 2em;
+}
+    .heroTitle {
+        font-size: 1.3rem;
+    }
+    .sunscreenImage {
+        width: 50%;
+    }
+    .heroDescription {
+        text-align: center;
+    }
+
+article {
+    padding: 2em;
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+    font-size: .8rem;
+    line-height: 1.8rem;
+}
+    .article .text {
+        font-size: .2rem;
+    }
+    .textOne, .textTwo {
+        opacity: 0;
+        position: relative;
+    }
+    .textTwo .background{
+        position: absolute;
+        left: -100px;
+        top: -100px;
+    }
+    .textTwo ul {
+        margin-left: 1.2em;
+    }
+    .visible {
+        opacity: 1;
+    }
+    mark {
+        background: rgb(255, 217, 0);
+        padding: .3em;
+    }
+
+    .expertSays {
+        background: rgba(255, 192, 203, 0.486);
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+        .expertSays .title {
+            text-align: center;
+        }
+        .expertSays .text::before {
+            content: '“';
+            font-size: 3rem;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -1.5rem);
+        }
+        .expertSays .text {
+            text-align: center;
+            font-size: 1.1rem;
+        }
