@@ -111,6 +111,7 @@ main {
         }
     .lastImage {
         padding: 2em;
+        width: 100%;
     }
 
 footer {
