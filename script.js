@@ -28,13 +28,13 @@ const list = document.querySelector('.list')
 const barButton = document.querySelector('.barButton')
 const listHeight = list.clientHeight
 
-list.style.height = 0
+list.style.maxHeight = 0
 barButton.addEventListener('click', ()=> {
     if(list.clientHeight == 0){
-        list.style.height = listHeight+'px'
+        list.style.maxHeight = listHeight+'px'
     }
     else {
-        list.style.height = '0px'
+        list.style.maxHeight = '0px'
     }
 })
 
