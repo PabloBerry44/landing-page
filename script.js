@@ -1,16 +1,11 @@
-const textOne = document.querySelector('.textOne')
-const textTwo = document.querySelector('.textTwo')
-const application = document.querySelector('.application')
+const hiddenElements = document.querySelectorAll('.hidden')
 
 const isInViewport = (element) => {
     const rect = element.getBoundingClientRect();
-    console.log('top: ' + rect.top)
-    console.log('bottom: ' + rect.bottom)
-    console.log(element.clientHeight/2)
-    console.log(' ')
     return (
-        (rect.top + 100) >= 0 &&
-        (rect.bottom - (element.clientHeight - 200)) <= (window.innerHeight)
+        ( rect.top >= 120 && rect.top <= (window.innerHeight-120)) ||
+        ( rect.bottom >= 120 && rect.bottom <= window.innerHeight-120) ||
+        ( (rect.top + element.clientHeight/2) >= 0 &&  (rect.bottom - element.clientHeight/2) <= window.innerHeight)
     );
 }
 
@@ -26,5 +21,32 @@ const showElements = (elementsArray) => {
 }
 
 document.addEventListener('scroll', ()=> {
-    showElements([textOne, textTwo, application])
+    showElements(hiddenElements)
 })
+
+const list = document.querySelector('.list')
+const barButton = document.querySelector('.barButton')
+const listHeight = list.clientHeight
+
+list.style.height = 0
+barButton.addEventListener('click', ()=> {
+    if(list.clientHeight == 0){
+        list.style.height = listHeight+'px'
+    }
+    else {
+        list.style.height = '0px'
+    }
+})
+
+const mailButton = document.querySelector('.mailButton')
+const toast = document.querySelector('.toast')
+
+mailButton.addEventListener('click', ()=> {
+    copy("pawel.borowiec@tutanota.com")
+})
+
+async function copy(text) {
+    await navigator.clipboard.writeText(text);
+    toast.classList.add('visible')
+    setTimeout(()=>{toast.classList.remove('visible')}, 2000)
+}
